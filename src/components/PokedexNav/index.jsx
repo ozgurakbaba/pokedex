@@ -1,3 +1,4 @@
+import React from 'react'
 
 export default function PokedexNav ({ pid, prev, next }) {
     // console.log(pid);   // -- testing

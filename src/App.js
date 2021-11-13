@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { getPokemonList } from './api/utils'
 
 import PokedexDeck from './components/PokedexDeck';

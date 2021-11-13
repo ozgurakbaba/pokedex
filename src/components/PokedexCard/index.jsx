@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { getPokemonDescriptionByPID, getPokemonSpriteUrlByPID } from '../../api/utils';
 
 import PokedexNav from "../PokedexNav";

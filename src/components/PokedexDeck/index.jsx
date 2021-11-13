@@ -1,3 +1,4 @@
+import React from 'react'
 import PokedexSelector from "../PokedexSelector";
 
 export default function PokedexDeck({ data }) {
