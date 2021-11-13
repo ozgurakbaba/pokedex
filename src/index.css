@@ -8,7 +8,9 @@ body {margin:0;padding:0;font-family: Roboto, sans-serif;-webkit-font-smoothing:
 .pokedex {margin:0;padding:40px 0;display:flex;flex-direction:column;width:320px;height: auto;}
 
 /* select */
-select {margin:0;padding:10px 8px;border-radius:8px;border:1px solid #cecece;outline:none;}
+select {border:none;padding:0 1em 0 0;margin:0;width:100%;font-family:inherit;font-size:inherit;cursor:inherit;line-height:inherit;}
+select {margin:0;padding:10px 8px;border-radius:8px;border:1px solid #cecece;outline:none;height:40px;}
+select::after {content: "\25b6";width: 0.8em;height: 0.5em;background-color: var(--select-arrow);clip-path: polygon(100% 0%, 0 0%, 50% 100%);}
 
 /* card */
 .card {background-color: #fefefe;padding:40px 10px 60px;text-align:center;margin:24px 0;border-radius: 8px;box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);-webkit-box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);-moz-box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);}
