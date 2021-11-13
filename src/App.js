@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react'
+import { getPokemonList } from './api/utils'
+
+import PokedexDeck from './components/PokedexDeck';
 
 function App() {
+  const [pokemons, setPokemons] = useState([]);
+  
+  async function getPokemonListFromAPI() {
+    await getPokemonList().then((data) => setPokemons(data));
+  }
+
+  useEffect(() => {
+    getPokemonListFromAPI();
+  }, []);
+
+  // console.log(pokemons);  // -- testing
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <PokedexDeck data={ pokemons } />
     </div>
   );
 }

@@ -1,13 +1,25 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+* {box-sizing:border-box;}
+body {margin:0;padding:0;font-family: Roboto, sans-serif;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;background-color: #BBE6E4;}
+
+/* app */
+.app-container {display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height: 100vh;width: 100%;}
+.pokedex {margin:0;padding:40px 0;display:flex;flex-direction:column;width:320px;height: auto;}
+
+/* select */
+select {margin:0;padding:10px 8px;border-radius:8px;border:1px solid #cecece;outline:none;}
+
+/* card */
+.card {background-color: #fefefe;padding:40px 10px 60px;text-align:center;margin:24px 0;border-radius: 8px;box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);-webkit-box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);-moz-box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);}
+.card img {width:200px;height:200px;background-color: #BBE6E4;border-radius: 50%;border:2px solid #c5c5c5;}
+.card h1 {font-family:Roboto, sans-serif;font-size:28px;font-weight:700;line-height: 120%;letter-spacing: .5px;}
+.card p {font-family:Roboto, sans-serif;font-size:18px;font-weight:400;line-height: 120%;letter-spacing: .5px;}
+
+/* buttons */
+.navigation {display:inline-flex;flex:row;align-items:center;justify-content:space-between;}
+.navigation button {background-color: #7D70BA;color:#fefefe;border:none;padding:8px 12px;height:40px;width:48%;border-radius:8px;cursor:pointer;font-weight:700;}
+.navigation button:hover {box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);-webkit-box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);-moz-box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);}
+
+/* helpers */
+code {font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;}
