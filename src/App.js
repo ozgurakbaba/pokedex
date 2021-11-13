@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <PokedexDeck data={ pokemons } />
+      <PokedexDeck data={ pokemons.sort((pk, npk) => pk.name.localeCompare(npk.name)) } />
     </div>
   );
 }
