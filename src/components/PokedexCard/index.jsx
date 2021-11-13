@@ -1,23 +1,35 @@
 import { useState, useEffect } from 'react';
 import { getPokemonDescriptionByPID, getPokemonSpriteUrlByPID } from '../../api/utils';
 
-
+import PokedexNav from "../PokedexNav";
 
 export default function PokedexCard({ pokemon }) {
     // console.log(pokemon);     // -- testing
-    const pid = (!pokemon) || pokemon.substring(pokemon.indexOf("-")+1, pokemon.length);
-
+    const [pokemonId, setPokemonId] = useState(1);
     const [description, setDescription] = useState("");
     const [spriteUrl, setSpriteUrl] = useState("");
 
+    const prevPokemonId = () => {
+        setPokemonId(Number(pokemonId)-1);
+        getPokemonDetailsFromAPI();
+        console.log("<< prev", pokemonId);
+    }
+
+    const nextPokemonId = () => {
+        setPokemonId(Number(pokemonId)+1);
+        getPokemonDetailsFromAPI();
+        console.log("next >>", pokemonId);
+    }
+
     async function getPokemonDetailsFromAPI() {
-        await getPokemonDescriptionByPID(pid).then((data) => setDescription(data));
-        setSpriteUrl(getPokemonSpriteUrlByPID(pid));
+        await getPokemonDescriptionByPID(pokemonId).then((data) => setDescription(data));
+        setSpriteUrl(getPokemonSpriteUrlByPID(pokemonId));
     }
     
     useEffect(() => {
         getPokemonDetailsFromAPI();
-    }, [pid]);
+        setPokemonId(pokemon.substring(pokemon.indexOf("-")+1, pokemon.length));
+    }, [pokemon]);
 
     return (
         <>
@@ -26,6 +38,7 @@ export default function PokedexCard({ pokemon }) {
             <h1>{ pokemon.charAt(0).toUpperCase() + pokemon.substring(1, pokemon.indexOf("-")) }</h1>
             <p>{ description }</p>
         </div>
+        <PokedexNav pid={ pokemonId } prev={ prevPokemonId } next={ nextPokemonId } />
         </>
     );
     

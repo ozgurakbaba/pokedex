@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
 import PokedexCard from "../PokedexCard";
-import PokedexNav from "../PokedexNav";
 
 export default function PokedexSelector ({ data }) {
     // console.log(data);
@@ -15,7 +14,6 @@ export default function PokedexSelector ({ data }) {
             })}
         </select>
         <PokedexCard pokemon={ pokemon } />
-        <PokedexNav pokemon={ pokemon } />
         </>
     );
 }

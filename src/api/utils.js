@@ -19,10 +19,10 @@ export async function getPokemonDescriptionByPID(pid) {
     if (data) return data.flavor_text_entries[0].flavor_text.replace(/[\n\f]/g, " ");
 }
 
-export function getPokemonSpriteUrlByPID(pid) {
-    return `${POKEAPI_SPRITES_RAW_URL}${pid}.png`;
-}
-
 export function getPokemonSpriteUrl() {
     return POKEAPI_SPRITES_URL;
+}
+
+export function getPokemonSpriteUrlByPID(pid) {
+    return `${POKEAPI_SPRITES_RAW_URL}${pid}.png`;
 }
